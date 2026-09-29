@@ -326,7 +326,7 @@
     try {
       const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || !(data.ok || String(data.success) === 'true')) throw new Error(data.error || 'Server error');
+      if (!res.ok || !(data.ok || String(data.success) === 'true')) throw new Error(data.error || data.message || 'Server error');
       form.classList.remove('sent'); void form.offsetWidth; form.classList.add('sent');
       msg.className = 'form__msg ok'; msg.textContent = '🧟 Got it! The horde will reply within 24h.';
       form.reset();
