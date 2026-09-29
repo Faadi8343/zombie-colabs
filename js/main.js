@@ -300,16 +300,6 @@
     render();
   }
 
-  /* ---------- P4: Horizons screenshot carousel ---------- */
-  const shots = $$('#shots img'), dots = $$('#shotDots button');
-  if (shots.length) {
-    let cur = 0, timer;
-    const show = n => { cur = n; shots.forEach((s, i) => s.classList.toggle('on', i === n)); dots.forEach((d, i) => d.classList.toggle('on', i === n)); };
-    const auto = () => { clearInterval(timer); timer = setInterval(() => { if (isOn(shots[0])) show((cur + 1) % shots.length); }, 3200); };
-    dots.forEach((d, i) => d.addEventListener('click', () => { show(i); auto(); }));
-    auto();
-  }
-
   /* ---------- Contact form ---------- */
   const form = $('#contactForm'), msg = $('#formMsg');
   if (form) form.addEventListener('submit', async e => {
