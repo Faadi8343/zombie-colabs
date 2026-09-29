@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zombie Colabs | AI & Software That Never Sleeps</title>
+  <meta name="description" content="Zombie Colabs builds AI automations, n8n lead-generation workflows, AI scrapers, trading bots, chatbots and custom software that work 24/7.">
+  <meta property="og:title" content="Zombie Colabs | AI & Software That Never Sleeps">
+  <meta property="og:description" content="AI automations, scrapers, trading bots, chatbots and custom software. Built by the undead, for the living.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta name="theme-color" content="#07040a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧟</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Rubik+Wet+Paint&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-loading">
+
+  <!-- ============ PRELOADER: flatline -> heartbeat -> reanimated ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader__ekg" viewBox="0 0 600 120" preserveAspectRatio="none">
+      <path d="M0 60 H180 L200 60 L215 20 L235 105 L255 5 L275 90 L290 60 H380 L395 45 L410 75 L420 60 H600"/>
+    </svg>
+    <div class="loader__txt">
+      <span class="loader__label">REANIMATING</span>
+      <span class="loader__pct" id="loaderPct">0</span>
+    </div>
+    <div class="loader__curtain loader__curtain--top"></div>
+    <div class="loader__curtain loader__curtain--bot"></div>
+  </div>
+
+  <!-- ============ CURSOR + SPORES ============ -->
+  <div class="cursor" id="cursor"><span class="cursor__label">BITE</span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <canvas id="spores" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="infection" aria-hidden="true"><span id="infectionBar"></span><em>infection</em></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo" data-hover>
+      <span class="logo__mark">Z</span>
+      <span class="logo__word">ZOMBIE<b>COLABS</b></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#services" data-hover>Services</a>
+      <a href="#work" data-hover>Work</a>
+      <a href="#ritual" data-hover>Process</a>
+      <a href="#contact" data-hover>Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn--sm magnetic" data-hover><span>Wake us up</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__art" id="heroArt">
+        <img src="assets/img/hero.jpg" alt="Zombie Colabs mascot: a zombie in a black suit with glowing pink eyes in front of analytics dashboards">
+        <i class="eye" style="--x:75.4%;--y:23.9%"></i>
+        <i class="eye" style="--x:80.3%;--y:23.6%"></i>
+        <div class="hero__lasers"><i></i><i></i><i></i></div>
+      </div>
+      <div class="hero__fog"></div>
+
+      <div class="hero__content">
+        <p class="kicker reveal"><span class="pulse"></span> AI &amp; SOFTWARE AGENCY · OPEN 24/7 · NEVER SLEEPS</p>
+        <h1 class="hero__title">
+          <span class="line"><span class="glitch" data-text="WE BRING">WE BRING</span></span>
+          <span class="line"><span class="glitch glitch--pink" data-text="DEAD WORK">DEAD WORK</span></span>
+          <span class="line"><span class="wet">back to life.</span></span>
+        </h1>
+        <p class="hero__sub reveal">Your boring, manual, soul-sucking tasks? We infect them with AI. Lead-gen machines, scrapers, trading bots &amp; chatbots that grind all night, so you don't have to.</p>
+        <div class="hero__cta reveal">
+          <a href="#work" class="btn magnetic" data-hover><span>See the undead at work</span></a>
+          <a href="#contact" class="btn btn--ghost magnetic" data-hover><span>Start a project →</span></a>
+        </div>
+      </div>
+
+      <a href="#services" class="scroll-hint" data-hover aria-label="Scroll down">
+        <span>SCROLL</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE X ============ -->
+    <div class="tape-wrap" aria-hidden="true">
+      <div class="tape tape--pink"><div class="tape__track">
+        <span>AUTOMATE ✦ SCRAPE ✦ TRADE ✦ CHAT ✦ BUILD ✦ REPEAT ✦ AUTOMATE ✦ SCRAPE ✦ TRADE ✦ CHAT ✦ BUILD ✦ REPEAT ✦&nbsp;</span>
+        <span>AUTOMATE ✦ SCRAPE ✦ TRADE ✦ CHAT ✦ BUILD ✦ REPEAT ✦ AUTOMATE ✦ SCRAPE ✦ TRADE ✦ CHAT ✦ BUILD ✦ REPEAT ✦&nbsp;</span>
+      </div></div>
+      <div class="tape tape--green"><div class="tape__track">
+        <span>🧠 BRAINS NOT BUDGETS 🧠 BUILT BY THE UNDEAD 🧠 WORKS WHILE YOU SLEEP 🧠 BRAINS NOT BUDGETS 🧠 BUILT BY THE UNDEAD 🧠 WORKS WHILE YOU SLEEP&nbsp;</span>
+        <span>🧠 BRAINS NOT BUDGETS 🧠 BUILT BY THE UNDEAD 🧠 WORKS WHILE YOU SLEEP 🧠 BRAINS NOT BUDGETS 🧠 BUILT BY THE UNDEAD 🧠 WORKS WHILE YOU SLEEP&nbsp;</span>
+      </div></div>
+    </div>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services">
+      <div class="section__head">
+        <p class="tag">// 01 — THE INFECTION MENU</p>
+        <h2 class="h2" data-scramble>What we <em>bite</em> into</h2>
+        <p class="lead reveal">Pick your poison. Every build is custom, wired into your tools, and designed to run without a human babysitter.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__num">01</div>
+          <svg class="card__ico" viewBox="0 0 48 48"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path d="M15 24h8m0 0 10-10M23 24l10 10"/></svg>
+          <h3>AI Automation &amp; n8n</h3>
+          <p>Workflows that connect your apps, think with AI, and never forget a follow-up. Leads in, deals out.</p>
+          <ul class="chips"><li>n8n</li><li>Make</li><li>OpenAI</li><li>CRMs</li></ul>
+        </article>
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__num">02</div>
+          <svg class="card__ico" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="3"/><path d="M6 18h36M18 18v22M30 18v22M6 29h36"/></svg>
+          <h3>AI Scrapers &amp; Sheets</h3>
+          <p>We crawl the web, clean the data with AI, and drop it straight into Google Sheets or your database.</p>
+          <ul class="chips"><li>Python</li><li>Playwright</li><li>Sheets API</li><li>LLMs</li></ul>
+        </article>
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__num">03</div>
+          <svg class="card__ico" viewBox="0 0 48 48"><path d="M6 38 18 24l8 7 16-19"/><path d="M34 12h8v8"/><path d="M6 44h36"/></svg>
+          <h3>Trading Bots</h3>
+          <p>Strategy-driven bots with backtesting, risk rules and live dashboards. Emotionless. Like us.</p>
+          <ul class="chips"><li>Binance</li><li>MT5</li><li>Backtests</li><li>Alerts</li></ul>
+        </article>
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__num">04</div>
+          <svg class="card__ico" viewBox="0 0 48 48"><path d="M8 10h32v22H22l-9 7v-7H8z"/><circle cx="18" cy="21" r="1.5"/><circle cx="24" cy="21" r="1.5"/><circle cx="30" cy="21" r="1.5"/></svg>
+          <h3>AI Chatbots</h3>
+          <p>Support &amp; sales assistants trained on your business. They answer at 3AM without complaining.</p>
+          <ul class="chips"><li>RAG</li><li>WhatsApp</li><li>Web widget</li><li>Claude / GPT</li></ul>
+        </article>
+        <article class="card reveal" data-tilt data-hover>
+          <div class="card__num">05</div>
+          <svg class="card__ico" viewBox="0 0 48 48"><path d="m16 14-10 10 10 10M32 14l10 10-10 10M27 10l-6 28"/></svg>
+          <h3>Custom Software &amp; Web</h3>
+          <p>Websites, portals, dashboards and SaaS. Fast, good-looking, and built to survive the apocalypse.</p>
+          <ul class="chips"><li>Web apps</li><li>Portals</li><li>APIs</li><li>Dashboards</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ WORK / PROJECTS ============ -->
+    <section class="work section" id="work">
+      <div class="section__head">
+        <p class="tag">// 02 — FRESH KILLS</p>
+        <h2 class="h2" data-scramble>Our <em>work</em></h2>
+        <p class="lead reveal">A few of the creatures we've raised from the dead. Scroll, and they come alive.</p>
+      </div>
+
+      <div class="stack">
+
+        <!-- n8n lead gen -->
+        <article class="proj" data-hover>
+          <div class="proj__info">
+            <span class="proj__idx">P/01</span>
+            <h3>Lead Generation Engine</h3>
+            <p class="proj__type">n8n · AI enrichment · CRM</p>
+            <p>An n8n workflow that finds prospects, enriches them with AI, scores them, drops the hot ones into the CRM and sends personalised outreach automatically.</p>
+            <ul class="chips"><li>n8n</li><li>OpenAI</li><li>Google Sheets</li><li>Gmail</li></ul>
+          </div>
+          <div class="proj__screen screen">
+            <div class="screen__bar"><i></i><i></i><i></i><span>n8n · lead-gen-engine.json</span></div>
+            <svg class="flow" viewBox="0 0 640 340">
+              <defs>
+                <path id="f1" d="M110 170 C150 170 150 90 190 90"/>
+                <path id="f2" d="M110 170 C150 170 150 250 190 250"/>
+                <path id="f3" d="M290 90 C330 90 330 170 370 170"/>
+                <path id="f4" d="M290 250 C330 250 330 170 370 170"/>
+                <path id="f5" d="M470 170 C500 170 500 90 530 90"/>
+                <path id="f6" d="M470 170 C500 170 500 250 530 250"/>
+              </defs>
+              <g class="flow__wires">
+                <use href="#f1"/><use href="#f2"/><use href="#f3"/><use href="#f4"/><use href="#f5"/><use href="#f6"/>
+              </g>
+              <g class="flow__packets">
+                <circle r="5"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
+                <circle r="5"><animateMotion dur="1.6s" begin=".4s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
+                <circle r="5"><animateMotion dur="1.6s" begin=".8s" repeatCount="indefinite"><mpath href="#f3"/></animateMotion></circle>
+                <circle r="5"><animateMotion dur="1.6s" begin="1.2s" repeatCount="indefinite"><mpath href="#f4"/></animateMotion></circle>
+                <circle r="5"><animateMotion dur="1.6s" begin=".2s" repeatCount="indefinite"><mpath href="#f5"/></animateMotion></circle>
+                <circle r="5"><animateMotion dur="1.6s" begin="1s" repeatCount="indefinite"><mpath href="#f6"/></animateMotion></circle>
+              </g>
+              <g class="node node--start"><rect x="10" y="140" width="100" height="60" rx="30"/><text x="60" y="166">⏰ Trigger</text><text class="sub" x="60" y="184">every hour</text></g>
+              <g class="node"><rect x="190" y="60" width="100" height="60" rx="10"/><text x="240" y="86">🔍 Scrape</text><text class="sub" x="240" y="104">Maps / LinkedIn</text></g>
+              <g class="node"><rect x="190" y="220" width="100" height="60" rx="10"/><text x="240" y="246">📥 Forms</text><text class="sub" x="240" y="264">webhook</text></g>
+              <g class="node node--ai"><rect x="370" y="135" width="100" height="70" rx="10"/><text x="420" y="164">🧠 AI Agent</text><text class="sub" x="420" y="182">enrich + score</text></g>
+              <g class="node"><rect x="530" y="60" width="100" height="60" rx="10"/><text x="580" y="86">📊 Sheets</text><text class="sub" x="580" y="104">+ CRM</text></g>
+              <g class="node"><rect x="530" y="220" width="100" height="60" rx="10"/><text x="580" y="246">✉️ Gmail</text><text class="sub" x="580" y="264">outreach</text></g>
+            </svg>
+            <div class="screen__foot"><span class="ok">● running</span><span id="leadCount">0</span> leads captured this session</div>
+          </div>
+        </article>
+
+        <!-- sheet automation / AI scraper -->
+        <article class="proj" data-hover>
+          <div class="proj__info">
+            <span class="proj__idx">P/02</span>
+            <h3>Sheet Automation · AI Scraper</h3>
+            <p class="proj__type">Scraping · AI cleanup · Google Sheets</p>
+            <p>Crawls target sites, pulls messy data, lets AI clean and categorise it, then writes rows straight into Google Sheets. Hours of copy-paste gone.</p>
+            <ul class="chips"><li>Python</li><li>Playwright</li><li>LLM parsing</li><li>Sheets API</li></ul>
+          </div>
+          <div class="proj__screen screen">
+            <div class="screen__bar"><i></i><i></i><i></i><span>Google Sheets · scraped_leads</span></div>
+            <div class="sheet">
+              <div class="sheet__status"><span class="spin"></span><span id="scrapeUrl">crawling…</span><b id="scrapePct">0%</b></div>
+              <div class="sheet__prog"><i id="scrapeBar"></i></div>
+              <table>
+                <thead><tr><th>#</th><th>Company</th><th>Category</th><th>City</th><th>AI score</th></tr></thead>
+                <tbody id="sheetBody"></tbody>
+              </table>
+            </div>
+            <div class="screen__foot"><span class="ok">● syncing</span> demo data · sample rows</div>
+          </div>
+        </article>
+
+        <!-- trading bot -->
+        <article class="proj" data-hover>
+          <div class="proj__info">
+            <span class="proj__idx">P/03</span>
+            <h3>Trading Bots</h3>
+            <p class="proj__type">Strategy engine · Risk rules · Live dashboard</p>
+            <p>Rule-based and AI-assisted bots that read the market, place orders via exchange APIs, manage stop-losses and report every move to a live dashboard.</p>
+            <ul class="chips"><li>Python</li><li>Exchange APIs</li><li>Backtesting</li><li>Telegram alerts</li></ul>
+          </div>
+          <div class="proj__screen screen">
+            <div class="screen__bar"><i></i><i></i><i></i><span>bot://zc-trader · simulation</span></div>
+            <div class="trade">
+              <canvas id="tradeChart"></canvas>
+              <ul class="trade__log" id="tradeLog"></ul>
+            </div>
+            <div class="screen__foot"><span class="ok">● live sim</span> simulated feed for demo purposes</div>
+          </div>
+        </article>
+
+        <!-- Horizons -->
+        <article class="proj" data-hover>
+          <div class="proj__info">
+            <span class="proj__idx">P/04</span>
+            <h3>Horizons Consultants</h3>
+            <p class="proj__type">Website · Client portal · AI chatbot</p>
+            <p>Full website for a UK &amp; USA compliance firm: service pages, pricing, checkout, client portal and an AI assistant that answers visitors' questions around the clock.</p>
+            <ul class="chips"><li>Web</li><li>Portal</li><li>AI Chatbot</li><li>SEO</li></ul>
+            <a class="btn btn--ghost btn--sm magnetic" href="https://www.horizonsconsultants.us" target="_blank" rel="noopener" data-hover><span>Visit live site ↗</span></a>
+          </div>
+          <div class="proj__screen screen screen--shots">
+            <div class="screen__bar"><i></i><i></i><i></i><span>horizonsconsultants.us</span></div>
+            <div class="shots" id="shots">
+              <img src="assets/img/horizons-index.jpg" alt="Horizons Consultants homepage" class="on" loading="lazy">
+              <img src="assets/img/horizons-chatbot.jpg" alt="Horizons Consultants AI chatbot assistant" loading="lazy">
+              <img src="assets/img/horizons-pricing.jpg" alt="Horizons Consultants pricing page" loading="lazy">
+              <img src="assets/img/horizons-contact.jpg" alt="Horizons Consultants contact page" loading="lazy">
+            </div>
+            <div class="screen__foot shots__dots" id="shotDots"><button class="on" aria-label="Homepage"></button><button aria-label="Chatbot"></button><button aria-label="Pricing"></button><button aria-label="Contact"></button></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ DRIP DIVIDER ============ -->
+    <div class="drips" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0 0V30 L185 30 C192.5 30 195 55 200 55 C205 55 207.5 30 215 30 L420 30 C435 30 440 105 450 105 C460 105 465 30 480 30 L750 30 C760 30 763.333 60 770 60 C776.667 60 780 30 790 30 L1020 30 C1035 30 1040 95 1050 95 C1060 95 1065 30 1080 30 L1310 30 C1325 30 1330 70 1340 70 C1350 70 1355 30 1370 30 L1440 30 V0Z"/>
+        <circle class="drop" cx="1050" cy="95" r="7"/><circle class="drop d2" cx="450" cy="105" r="8"/><circle class="drop d3" cx="1340" cy="70" r="5"/><circle class="drop d4" cx="200" cy="58" r="4"/>
+      </svg>
+    </div>
+
+    <!-- ============ RITUAL / PROCESS ============ -->
+    <section class="ritual section" id="ritual">
+      <img class="ritual__peek" src="assets/img/peek.jpg" alt="" aria-hidden="true" loading="lazy">
+      <div class="section__head">
+        <p class="tag">// 03 — THE REANIMATION RITUAL</p>
+        <h2 class="h2" data-scramble>How we <em>work</em></h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal"><b>01</b><h3>Dig up</h3><p>A free call to dig into your workflow and find the tasks eating your time.</p></li>
+        <li class="step reveal"><b>02</b><h3>Stitch</h3><p>We map the solution, pick the stack and give you a clear scope and price.</p></li>
+        <li class="step reveal"><b>03</b><h3>Zap</h3><p>We build, test and show you progress every week. No black boxes.</p></li>
+        <li class="step reveal"><b>04</b><h3>Unleash</h3><p>It goes live, we train your team and keep it alive with ongoing support.</p></li>
+      </ol>
+      <svg class="ritual__line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path id="ritualPath" d="M0 20 H1000"/></svg>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="contact__art"><img src="assets/img/contact.jpg" alt="Zombie Colabs mascot reaching out for a handshake" loading="lazy"></div>
+      <div class="contact__inner">
+        <div class="contact__copy">
+          <p class="tag">// 04 — SUMMON US</p>
+          <h2 class="h2" data-scramble>Let's <em>shake</em> on it</h2>
+          <p class="lead">Tell us what's eating your time. We reply within 24 hours. Undead promise.</p>
+          <ul class="contact__list">
+            <li><span>✉</span><a href="mailto:info@zombiecolabs.com" data-hover>info@zombiecolabs.com</a></li>
+            <li><span>☎</span><a href="https://wa.me/923319100383" target="_blank" rel="noopener" data-hover>WhatsApp: +92 331 9100383</a></li>
+            <li><span>in</span><a href="https://www.linkedin.com/company/zombiecolabs/" target="_blank" rel="noopener" data-hover>LinkedIn</a></li>
+            <li><span>◎</span><a href="https://www.instagram.com/zombiecolabs/" target="_blank" rel="noopener" data-hover>@zombiecolabs</a></li>
+            <li><span>♪</span><a href="https://www.tiktok.com/@zombie.colabs5" target="_blank" rel="noopener" data-hover>TikTok @zombie.colabs5</a></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contactForm" action="https://formsubmit.co/ajax/info@zombiecolabs.com" method="post" novalidate>
+          <input type="hidden" name="_subject" value="New lead from zombiecolabs website">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <input id="f-name" name="name" type="text" required maxlength="100" placeholder=" " autocomplete="name">
+            <label for="f-name">Your name</label>
+          </div>
+          <div class="field">
+            <input id="f-email" name="email" type="email" required maxlength="150" placeholder=" " autocomplete="email">
+            <label for="f-email">Email</label>
+          </div>
+          <div class="field field--select">
+            <select id="f-service" name="service" required>
+              <option value="" disabled selected hidden></option>
+              <option>AI Automation / n8n</option>
+              <option>AI Scraper / Sheets</option>
+              <option>Trading Bot</option>
+              <option>AI Chatbot</option>
+              <option>Website / Software</option>
+              <option>Not sure yet</option>
+            </select>
+            <label for="f-service">What do you need?</label>
+          </div>
+          <div class="field">
+            <textarea id="f-msg" name="message" rows="4" required maxlength="3000" placeholder=" "></textarea>
+            <label for="f-msg">Tell us about the project</label>
+          </div>
+          <button class="btn btn--full magnetic" type="submit" data-hover><span>Send it to the horde ⚡</span></button>
+          <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true"><span>ZOMBIE</span><span>COLABS</span></div>
+    <div class="footer__row">
+      <p>© <span id="year"></span> Zombie Colabs. Built by the undead.</p>
+      <nav>
+        <a href="#services" data-hover>Services</a>
+        <a href="#work" data-hover>Work</a>
+        <a href="#contact" data-hover>Contact</a>
+        <a href="https://www.linkedin.com/company/zombiecolabs/" target="_blank" rel="noopener" data-hover>LinkedIn ↗</a>
+        <a href="https://www.instagram.com/zombiecolabs/" target="_blank" rel="noopener" data-hover>Instagram ↗</a>
+        <a href="https://www.tiktok.com/@zombie.colabs5" target="_blank" rel="noopener" data-hover>TikTok ↗</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

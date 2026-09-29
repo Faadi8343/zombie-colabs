@@ -1,0 +1,4 @@
+ErrorDocument 404 /404.html
+<Files "leads.csv">
+  Require all denied
+</Files>

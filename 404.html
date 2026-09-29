@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Zombie Colabs</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧟</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Rubik+Wet+Paint&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"><span class="cursor__label">BITE</span></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <canvas id="spores" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="/" class="logo" data-hover><span class="logo__mark">Z</span><span class="logo__word">ZOMBIE<b>COLABS</b></span></a>
+    <nav class="nav__links" id="navLinks"></nav>
+    <button class="burger" id="burger" aria-label="Menu" hidden></button>
+  </header>
+
+  <main class="lost">
+    <div class="lost__art"><img src="/assets/img/404.jpg" alt="Confused zombie shrugging under a flickering neon light"></div>
+    <div class="lost__content">
+      <div class="lost__code"><span class="glitch" data-text="404">404</span></div>
+      <h1>This page got eaten.</h1>
+      <p>We looked everywhere. Nothing left but bones. Let's get you back to the living.</p>
+      <a href="/" class="btn magnetic" data-hover><span>← Back to base</span></a>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
