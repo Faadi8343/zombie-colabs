@@ -461,6 +461,34 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .footer__row nav { display: flex; flex-wrap: wrap; gap: 22px; }
 .footer__row a:hover { color: var(--pink); }
 
+/* ---------- Floating WhatsApp + chatbot ---------- */
+.fab { position: fixed; right: 22px; bottom: 22px; z-index: 900; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.fab__btn { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--pink); box-shadow: var(--glow); transition: transform .4s var(--boing); }
+.fab__btn:hover { transform: scale(1.1) rotate(-8deg); }
+.fab__btn svg { width: 26px; height: 26px; fill: none; stroke: #000; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fab__btn--wa { background: #25d366; box-shadow: 0 0 12px rgba(37, 211, 102, .7), 0 0 36px rgba(37, 211, 102, .35); }
+.fab__btn--wa svg { width: 28px; height: 28px; fill: #fff; stroke: none; }
+.chat { width: 360px; max-width: calc(100vw - 44px); height: 500px; max-height: calc(100svh - 190px); display: flex; flex-direction: column; overflow: hidden; border-radius: 20px; background: rgba(13, 7, 20, .96); border: 1px solid var(--pink); box-shadow: var(--glow), 0 30px 80px rgba(0, 0, 0, .7); backdrop-filter: blur(12px); animation: chatIn .45s var(--boing); }
+.chat[hidden] { display: none; }
+@keyframes chatIn { from { opacity: 0; transform: translateY(20px) scale(.92); } }
+.chat__head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #140c1b; border-bottom: 1px solid var(--line); }
+.chat__head h4 { margin-right: auto; font: 900 13px var(--display); letter-spacing: .04em; }
+.chat__head h4 b { color: var(--pink); }
+.chat__head button { width: 30px; height: 30px; border-radius: 8px; color: var(--dim); transition: color .3s, background .3s; }
+.chat__head button:hover { color: var(--ink); background: rgba(255, 255, 255, .08); }
+.chat__msgs { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; overscroll-behavior: contain; }
+.msg { max-width: 88%; padding: 10px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; animation: rowIn .5s var(--ease); }
+.msg--bot { align-self: flex-start; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .08); border-bottom-left-radius: 4px; }
+.msg--user { align-self: flex-end; background: var(--pink); color: #000; border-bottom-right-radius: 4px; }
+.msg--err { align-self: flex-start; border: 1px solid var(--red); color: var(--red); }
+.msg--bot:empty::before { content: "braaains…"; font: 400 12px var(--mono); color: var(--green); animation: zap 1s steps(2) infinite; }
+.chat__form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+.chat__form input { flex: 1; min-width: 0; padding: 11px 14px; border-radius: 12px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); color: var(--ink); font: 400 16px var(--body); outline: none; transition: border-color .3s; }
+.chat__form input:focus { border-color: var(--pink); }
+.chat__form button { width: 44px; border-radius: 12px; background: var(--pink); color: #000; font-size: 16px; }
+.chat__form button:disabled { opacity: .5; }
+@media (max-width: 480px) { .fab { right: 12px; bottom: 12px; } .chat { max-width: calc(100vw - 24px); max-height: calc(100svh - 160px); } }
+
 /* ---------- 404 ---------- */
 .lost { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 100px clamp(16px, 6vw, 90px); overflow: hidden; }
 .lost__art { position: absolute; inset: 0; }

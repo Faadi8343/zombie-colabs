@@ -326,5 +326,53 @@
     } finally { btn.textContent = old; }
   });
 
+  /* ---------- Chatbot (streams plain text from /api/chat) ---------- */
+  const chat = $('#chat'), chatToggle = $('#chatToggle'), chatMsgs = $('#chatMsgs'), chatForm = $('#chatForm'), chatInput = $('#chatInput');
+  if (chat) {
+    const history = [];
+    const addMsg = (text, type) => {
+      const m = document.createElement('div');
+      m.className = 'msg msg--' + type; m.textContent = text;
+      chatMsgs.appendChild(m); chatMsgs.scrollTop = chatMsgs.scrollHeight;
+      return m;
+    };
+    const setOpen = open => {
+      chat.hidden = !open; chatToggle.setAttribute('aria-expanded', open);
+      if (!open) return;
+      if (!chatMsgs.children.length) addMsg("Braaains… I mean, hi! 🧟 I'm the Zombie Colabs bot. Ask me about our automations, scrapers, trading bots, chatbots or how to start a project.", 'bot');
+      setTimeout(() => chatInput.focus(), 150);
+    };
+    chatToggle.addEventListener('click', () => setOpen(chat.hidden));
+    $('#chatClose').addEventListener('click', () => setOpen(false));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && !chat.hidden) setOpen(false); });
+
+    chatForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const text = chatInput.value.trim(), btn = $('button', chatForm);
+      if (!text || btn.disabled) return;
+      addMsg(text, 'user'); history.push({ role: 'user', content: text });
+      chatInput.value = ''; btn.disabled = true;
+      const bot = addMsg('', 'bot');
+      const fail = t => { bot.className = 'msg msg--err'; bot.textContent = t; history.pop(); };
+      try {
+        const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history }) });
+        if (!res.ok) fail((await res.json().catch(() => ({}))).error || 'Something died. Try again.');
+        else {
+          const reader = res.body.getReader(), dec = new TextDecoder();
+          let full = '';
+          for (;;) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            full += dec.decode(value, { stream: true });
+            bot.textContent = full; chatMsgs.scrollTop = chatMsgs.scrollHeight;
+          }
+          if (full) history.push({ role: 'assistant', content: full });
+          else fail('No answer came back from the grave. Try again.');
+        }
+      } catch { fail('Network error. Check your connection and try again.'); }
+      finally { btn.disabled = false; chatInput.focus(); }
+    });
+  }
+
   onScroll();
 })();
