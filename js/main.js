@@ -93,15 +93,12 @@
     draw();
   }
 
-  /* ---------- Nav: hide on scroll down, mobile menu, active link ---------- */
+  /* ---------- Nav: sticky, mobile menu, active link ---------- */
   const nav = $('#nav'), burger = $('#burger'), links = $('#navLinks');
-  let lastY = 0;
   const bar = $('#infectionBar');
   const onScroll = () => {
     const y = scrollY;
     nav.classList.toggle('scrolled', y > 40);
-    nav.classList.toggle('hide', y > lastY && y > 400 && !links.classList.contains('open'));
-    lastY = y;
     if (bar) bar.style.height = (y / (document.documentElement.scrollHeight - innerHeight) * 100) + '%';
     stackCards();
   };
