@@ -23,7 +23,7 @@ Work shown on the site:
 - Trading Bots: rule-based and AI-assisted bots that place orders via exchange APIs, manage stop-losses and report to a live dashboard.
 Process: 1) Dig up: a free call to find the tasks eating your time. 2) Stitch: we map the solution, pick the stack and give a clear scope and price. 3) Zap: we build, test and show progress every week. 4) Unleash: it goes live, we train your team and provide ongoing support.
 Pricing: every build is custom; there are no fixed prices on the site. A scope and price come after the free call.
-Contact: WhatsApp +92 331 9100383 (https://wa.me/923319100383), email info@zombiecolabs.com, or the contact form on this page. Replies within 24 hours. Also on LinkedIn (zombiecolabs), Instagram (@zombiecolabs) and TikTok (@zombie.colabs5).
+Contact: WhatsApp +1 (479) 432-5649 (https://wa.me/14794325649), email info@zombiecolabs.com, or the contact form on this page. Replies within 24 hours. Also on LinkedIn (zombiecolabs), Instagram (@zombiecolabs) and TikTok (@zombie.colabs5).
 
 RULES:
 1. Be concise: a short paragraph or a compact "- " list, under about 100 words. Plain text only, no markdown.
